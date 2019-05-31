@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        tools:context=".voting">
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:padding="20dp"
+            android:layout_height="wrap_content" android:gravity="center">
+
+        <TextView
+                android:text="Your username has been copied to your clipboard. It will be useful to paste it on the different voting pages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/help"
+                android:textColor="@color/black"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <WebView
+            android:id="@+id/browser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_weight="1">
+    </WebView>
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/close"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:padding="20dp"
+            android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical">
+
+        <TextView
+                android:text=" Have you finished voting?"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/closetext"
+                android:textColor="@color/black"/>
+        <Button
+                android:text="Close"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/closebutton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>

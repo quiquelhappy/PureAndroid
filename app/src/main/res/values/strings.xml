@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pure Vanilla</string>
+    <string name="title_activity_dashboard">dashboard</string>
+    <string name="title_home">Voting</string>
+    <string name="title_dashboard">Stats</string>
+    <string name="title_notifications">Store</string>
+</resources>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".dashboard">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimaryDark"
+                android:elevation="4dp"
+                android:paddingRight="15dp"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="right">
+                <androidx.appcompat.widget.LinearLayoutCompat android:layout_width="match_parent"
+                                                              android:layout_height="match_parent"
+                                                              android:gravity="center_vertical">
+                    <TextView
+                            android:id="@+id/tabname"
+                            android:text="Pure Vanilla"
+                            android:textColor="@android:color/black"
+                            android:textFontWeight="600"
+                            android:layout_marginRight="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    <androidx.appcompat.widget.LinearLayoutCompat android:layout_width="wrap_content" android:gravity="center_vertical"
+                                                                  android:layout_height="wrap_content">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/profile_image"
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/unknown"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </LinearLayout>
+
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/refresh"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:soundEffectsEnabled="true"
+                android:layout_height="wrap_content">
+            />
+            <androidx.core.widget.NestedScrollView
+                    android:id="@+id/wrapscroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <androidx.appcompat.widget.LinearLayoutCompat android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:orientation="vertical">
+                    <androidx.appcompat.widget.LinearLayoutCompat android:layout_width="match_parent"
+                                  android:padding="20dp"
+                                  android:id="@+id/voting"
+                                  android:visibility="visible"
+                                  android:orientation="vertical"
+                                  android:layout_height="wrap_content">
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.appcompat.widget.LinearLayoutCompat android:layout_width="match_parent"
+                                  android:padding="20dp"
+                                  android:id="@+id/stats"
+                                  android:visibility="gone"
+                                  android:orientation="vertical"
+                                  android:layout_height="match_parent">
+
+                        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+                                                                               android:layout_height="wrap_content">
+                            <com.google.android.material.textfield.TextInputEditText android:layout_width="match_parent"
+                                                                                     android:id="@+id/searchuser"
+                                                                                     android:layout_height="wrap_content"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <View
+                                android:id="@+id/divider"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginBottom="20dp"
+                                android:layout_marginTop="20dp"
+                                android:background="?android:attr/listDivider"></View>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat android:layout_width="match_parent"
+                                                                      android:orientation="vertical"
+                                                                      android:background="@drawable/card"
+                                                                      android:padding="20dp"
+                                                                      android:layout_height="200dp">
+
+                            <WebView android:id="@+id/popularitygraph" android:layout_width="match_parent" android:layout_height="match_parent">
+
+                            </WebView>
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <TextView android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:text="Recent Donors"
+                                  android:textColor="@color/black"
+                                  android:textSize="20sp"
+                                  android:textAlignment="center"
+                                  android:layout_marginTop="20dp"/>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat android:layout_width="match_parent"
+                                                                      android:orientation="vertical"
+                                                                      android:layout_marginTop="10dp"
+                                                                      android:layout_height="wrap_content" android:id="@+id/recentdonors">
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.appcompat.widget.LinearLayoutCompat android:layout_width="match_parent"
+                                  android:id="@+id/store"
+                                  android:visibility="gone"
+                                  android:orientation="vertical"
+                                  android:layout_height="match_parent">
+
+                        <WebView android:id="@+id/storeweb" android:layout_width="match_parent" android:layout_height="match_parent">
+
+                        </WebView>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.core.widget.NestedScrollView>
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginStart="0dp"
+            android:background="@android:color/white"
+            app:menu="@menu/bottom_nav_menu"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
